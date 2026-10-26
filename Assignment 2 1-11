@@ -1,0 +1,3349 @@
+Problem 1
+
+(a) Determine whether 
+m
+n
+∈
+Σ
+mn∈Σ.
+Answer: False.
+
+The alphabet 
+Σ
+Σ contains three individual symbols: 
+m
+m, 
+n
+n, and 
+#
+#.
+
+The expression 
+m
+n
+mn is a string consisting of two symbols, 
+m
+m followed by 
+n
+n. It is not an individual symbol of the alphabet.
+
+Therefore,
+
+m
+n
+∉
+Σ
+mn∈
+/
+Σ
+​
+Problem 2
+
+(b) Determine whether 
+m
+n
+∈
+A
+mn∈A and whether 
+{
+m
+n
+}
+⊆
+A
+{mn}⊆A.
+Both statements are true.
+
+m
+n
+∈
+A
+mn∈A is true because the string 
+m
+n
+mn appears directly as a member of 
+A
+A.
+
+{
+m
+n
+}
+⊆
+A
+{mn}⊆A is true because the only element of the set 
+{
+m
+n
+}
+{mn} is 
+m
+n
+mn, and 
+m
+n
+∈
+A
+mn∈A.
+
+Thus,
+
+m
+n
+∈
+A
+and
+{
+m
+n
+}
+⊆
+A
+mn∈Aand{mn}⊆A
+​
+Problem 3
+
+(a) Is NAME ARROW NUMBER END a string over 
+Δ
+Δ?
+Yes. Every item belongs to 
+Δ
+Δ.
+
+The string contains four tokens, so
+
+∣
+NAME ARROW NUMBER END
+∣
+=
+4
+∣NAME ARROW NUMBER END∣=4
+​
+ 
+(b) Is NAME NUMBER END a string over 
+Δ
+Δ?
+Yes. NAME, NUMBER, and END all belong to 
+Δ
+Δ.
+
+Its length is 
+3
+3.
+
+However, being a string over 
+Δ
+Δ only means that every element belongs to the alphabet. It does not guarantee that the sequence follows the grammatical rules of a programming language. For example, a language might require ARROW between NAME and NUMBER.
+
+(c) Is ID ARROW NUMBER END a string over 
+Δ
+Δ?
+No. The token ID is not a member of the specified alphabet 
+Δ
+Δ.
+
+The exact reason is
+
+ID
+∉
+Δ
+ID∈
+/
+Δ
+​
+ 
+Even if ID is a common token category in other programming-language designs, it cannot be used in a string over this particular alphabet unless it is added to 
+Δ
+Δ.
+
+(d) Why does NAME have length 1 at the token level?
+NAME is defined as one indivisible token symbol. Its four written letters are simply the label used to represent that symbol.
+
+Therefore,
+
+∣
+NAME
+∣
+=
+1
+ at the token level
+∣NAME∣=1 at the token level
+​
+ 
+At the character level, the written label NAME contains four characters. The length depends on which alphabet and abstraction level are being used.
+
+(e) Character-level alphabet for score -> 27;
+The distinct characters are:
+
+Σ
+c
+=
+{
+s
+,
+c
+,
+o
+,
+r
+,
+e
+,
+space
+,
+−
+,
+>
+,
+2
+,
+7
+,
+;
+}
+Σ 
+c
+​
+ ={s,c,o,r,e,space,−,>,2,7,;}
+​
+ 
+There are 11 distinct characters.
+
+The source text contains:
+
+score: 5 characters
+
+space: 1 character
+
+->: 2 characters
+
+space: 1 character
+
+27: 2 characters
+
+;: 1 character
+
+Thus, the total source-string length is
+
+5
++
+1
++
+2
++
+1
++
+2
++
+1
+=
+12
+5+1+2+1+2+1= 
+12
+​
+ 
+The alphabet has 11 distinct symbols, while the source string has 12 character positions because some characters repeat.
+
+(f) Token-category string for score -> 27;
+The token-category string is
+
+NAME ARROW NUMBER END
+NAME ARROW NUMBER END
+​
+ 
+Its token-level length is 
+4
+4.
+
+One piece of spelling information that is lost is the actual identifier spelling score. The token NAME indicates the category of the identifier, but not its original spelling.
+
+Problem 4
+
+(a) Count the prefixes and suffixes.
+A string of length 
+n
+n has 
+n
++
+1
+n+1 prefixes when the empty string and the entire string are included. Each split position determines one prefix.
+
+Since 
+∣
+w
+∣
+=
+8
+∣w∣=8,
+
+Number of prefixes
+=
+8
++
+1
+=
+9
+Number of prefixes=8+1=9
+​
+ 
+The same reasoning applies to suffixes: each of the nine split positions determines one suffix.
+
+Number of suffixes
+=
+8
++
+1
+=
+9
+Number of suffixes=8+1=9
+​
+ 
+These counts include 
+λ
+λ and 
+w
+w.
+
+(b) List every nonempty proper prefix.
+A proper prefix is shorter than the entire string. The nonempty proper prefixes have lengths 1 through 7.
+
+{
+c
+,
+c
+a
+,
+c
+a
+b
+,
+c
+a
+b
+c
+,
+c
+a
+b
+c
+a
+,
+c
+a
+b
+c
+a
+b
+,
+c
+a
+b
+c
+a
+b
+c
+}
+{c,ca,cab,cabc,cabca,cabcab,cabcabc}
+​
+ 
+(c) List every nonempty proper suffix.
+The nonempty proper suffixes have lengths 1 through 7:
+
+{
+a
+,
+c
+a
+,
+b
+c
+a
+,
+a
+b
+c
+a
+,
+c
+a
+b
+c
+a
+,
+b
+c
+a
+b
+c
+a
+,
+a
+b
+c
+a
+b
+c
+a
+}
+{a,ca,bca,abca,cabca,bcabca,abcabca}
+​
+ 
+(d) Determine which candidates are substrings.
+A substring is a sequence of consecutive symbols in the original string.
+
+Candidate
+
+Substring?
+
+Starting position(s)
+
+c
+a
+b
+cab
+
+Yes
+
+1, 4
+
+a
+b
+c
+a
+abca
+
+Yes
+
+2, 5
+
+c
+b
+a
+cba
+
+No
+
+—
+
+b
+c
+a
+bca
+
+Yes
+
+3, 6
+
+c
+a
+b
+c
+a
+cabca
+
+Yes
+
+1, 4
+
+For example, 
+c
+a
+b
+cab occurs at positions 1–3 and 4–6. The candidate 
+c
+b
+a
+cba does not occur because the consecutive symbols never appear in that order.
+
+(e) Find the longest nonempty proper string that is both a prefix and a suffix.
+The longest matching string is
+
+c
+a
+b
+c
+a
+cabca
+​
+ 
+Prefix: positions 1–5 give cabca.
+
+Suffix: positions 4–8 give cabca.
+
+It has length 5, and it is proper because it is shorter than 
+w
+w, which has length 8.
+
+Problem 5 
+
+(a) List every member of 
+Σ
+2
+Σ 
+2
+ .
+Systematically list the strings by their first symbol, then by their second symbol.
+
+Starting with 
+r
+r:
+
+r
+r
+,
+ 
+r
+s
+,
+ 
+r
+t
+rr, rs, rt
+Starting with 
+s
+s:
+
+s
+r
+,
+ 
+s
+s
+,
+ 
+s
+t
+sr, ss, st
+Starting with 
+t
+t:
+
+t
+r
+,
+ 
+t
+s
+,
+ 
+t
+t
+tr, ts, tt
+Therefore,
+
+Σ
+2
+=
+{
+r
+r
+,
+r
+s
+,
+r
+t
+,
+s
+r
+,
+s
+s
+,
+s
+t
+,
+t
+r
+,
+t
+s
+,
+t
+t
+}
+Σ 
+2
+ ={rr,rs,rt,sr,ss,st,tr,ts,tt}
+​
+ 
+The alphabet has three symbols, and strings of length 2 have two independent positions:
+
+∣
+Σ
+2
+∣
+=
+∣
+Σ
+∣
+2
+=
+3
+2
+=
+9
+∣Σ 
+2
+ ∣=∣Σ∣ 
+2
+ =3 
+2
+ = 
+9
+​
+ 
+The list contains exactly nine distinct strings.
+
+(b) Compute 
+∣
+Σ
+5
+∣
+∣Σ 
+5
+ ∣.
+There are three choices for each of the five positions.
+
+∣
+Σ
+5
+∣
+=
+∣
+Σ
+∣
+5
+=
+3
+5
+∣Σ 
+5
+ ∣=∣Σ∣ 
+5
+ =3 
+5
+ 
+∣
+Σ
+5
+∣
+=
+243
+∣Σ 
+5
+ ∣=243
+​
+ 
+(c) Count all strings over 
+Σ
+Σ of length at most 4.
+For each length 
+k
+k, there are 
+3
+k
+3 
+k
+  strings.
+
+∑
+k
+=
+0
+4
+∣
+Σ
+k
+∣
+=
+3
+0
++
+3
+1
++
+3
+2
++
+3
+3
++
+3
+4
+=
+1
++
+3
++
+9
++
+27
++
+81
+=
+121
+k=0
+∑
+4
+​
+ ∣Σ 
+k
+ ∣
+​
+  
+=3 
+0
+ +3 
+1
+ +3 
+2
+ +3 
+3
+ +3 
+4
+ 
+=1+3+9+27+81
+= 
+121
+​
+ 
+​
+ 
+The 
+3
+0
+=
+1
+3 
+0
+ =1 term counts the empty string 
+λ
+λ.
+
+(d) Count the strings in 
+Σ
+4
+Σ 
+4
+  that begin with 
+r
+r and end with 
+t
+t.
+The first position is fixed as 
+r
+r, and the fourth position is fixed as 
+t
+t.
+
+Position 1: 1 choice (
+r
+r).
+
+Position 2: 3 choices.
+
+Position 3: 3 choices.
+
+Position 4: 1 choice (
+t
+t).
+
+By the multiplication principle,
+
+1
+⋅
+3
+⋅
+3
+⋅
+1
+=
+9
+1⋅3⋅3⋅1= 
+9
+​
+ 
+(e) Count strings in 
+Σ
+3
+Σ 
+3
+  whose first symbol is not 
+s
+s.
+The first position can be either 
+r
+r or 
+t
+t, giving 2 choices. Each of the remaining two positions has 3 choices.
+
+2
+⋅
+3
+⋅
+3
+=
+18
+2⋅3⋅3= 
+18
+​
+ 
+(f) Determine membership in 
+Σ
+∗
+Σ 
+∗
+  and 
+Σ
++
+Σ 
++
+ .
+Here, 
+Σ
+∗
+Σ 
+∗
+  contains all strings over 
+Σ
+Σ, including 
+λ
+λ, while 
+Σ
++
+Σ 
++
+  contains all nonempty strings over 
+Σ
+Σ.
+
+Object
+
+In 
+Σ
+∗
+Σ 
+∗
+ ?
+
+In 
+Σ
++
+Σ 
++
+ ?
+
+Reason
+
+λ
+λ
+
+Yes
+
+No
+
+Empty string
+
+r
+s
+t
+t
+r
+rsttr
+
+Yes
+
+Yes
+
+Nonempty and every symbol belongs to 
+Σ
+Σ
+
+r
+s
+x
+rsx
+
+No
+
+No
+
+x
+∉
+Σ
+x∈
+/
+Σ
+
+t
+t
+
+Yes
+
+Yes
+
+Nonempty string over 
+Σ
+Σ
+
+Problem 6
+
+(a) Read the complete definition in ordinary English.
+The language 
+K
+K consists of all strings over the alphabet 
+Σ
+=
+{
+a
+,
+b
+,
+c
+}
+Σ={a,b,c} that have length at least 3, begin and end with the same symbol, and contain at least one occurrence of the symbol 
+b
+b.
+
+All three conditions must hold simultaneously.
+
+(b) Determine membership in 
+K
+K.
+String
+
+Length at least 3?
+
+Matching endpoints?
+
+Contains 
+b
+b?
+
+In 
+K
+K?
+
+λ
+λ
+
+No
+
+No
+
+No
+
+No
+
+a
+b
+a
+aba
+
+Yes
+
+Yes (
+a
+,
+a
+a,a)
+
+Yes
+
+Yes
+
+a
+c
+a
+aca
+
+Yes
+
+Yes (
+a
+,
+a
+a,a)
+
+No
+
+No
+
+b
+c
+b
+bcb
+
+Yes
+
+Yes (
+b
+,
+b
+b,b)
+
+Yes
+
+Yes
+
+a
+b
+c
+a
+abca
+
+Yes
+
+Yes (
+a
+,
+a
+a,a)
+
+Yes
+
+Yes
+
+c
+a
+b
+a
+c
+cabac
+
+Yes
+
+Yes (
+c
+,
+c
+c,c)
+
+Yes
+
+Yes
+
+b
+b
+b
+bbb
+
+Yes
+
+Yes (
+b
+,
+b
+b,b)
+
+Yes
+
+Yes
+
+The accepted strings are
+
+K
+ contains 
+a
+b
+a
+,
+b
+c
+b
+,
+a
+b
+c
+a
+,
+c
+a
+b
+a
+c
+,
+b
+b
+b
+K contains aba,bcb,abca,cabac,bbb
+​
+ 
+(c) Is 
+K
+K finite or infinite?
+K
+K is infinite.
+
+Consider the family of strings
+
+a
+b
+n
+a
+,
+n
+≥
+1
+ab 
+n
+ a,n≥1
+​
+ 
+Here, 
+b
+n
+b 
+n
+  means 
+n
+n consecutive copies of 
+b
+b. For every integer 
+n
+≥
+1
+n≥1, the string:
+
+Has length at least 3.
+
+Begins and ends with 
+a
+a.
+
+Contains at least one 
+b
+b.
+
+Therefore, infinitely many distinct strings belong to 
+K
+K.
+
+(d) Define 
+H
+H, the language of strings over 
+Σ
+Σ that begin with 
+c
+c and have even length.
+Set-builder notation:
+
+H
+=
+{
+w
+∈
+Σ
+∗
+∣
+w
+ begins with 
+c
+ and 
+∣
+w
+∣
+ is even
+}
+H={w∈Σ 
+∗
+ ∣w begins with c and ∣w∣ is even}
+​
+ 
+The empty string does not begin with 
+c
+c, so it is not in 
+H
+H.
+
+(e) Give one string in 
+H
+∩
+K
+H∩K and one in 
+H
+−
+K
+H−K.
+A string in 
+H
+∩
+K
+H∩K: cabc
+
+It begins with 
+c
+c.
+
+Its length is 4, which is even.
+
+Its first and last symbols are both 
+c
+c.
+
+It contains 
+b
+b, and its length is at least 3.
+
+Thus,
+
+c
+a
+b
+c
+∈
+H
+∩
+K
+cabc∈H∩K
+​
+ 
+A string in 
+H
+−
+K
+H−K: cc
+
+It begins with 
+c
+c and has length 2, which is even.
+
+It does not satisfy the length requirement for 
+K
+K, since 
+2
+<
+3
+2<3.
+
+Therefore,
+
+c
+c
+∈
+H
+−
+K
+cc∈H−K
+​
+
+Problem 7 
+
+(a) List every member of 
+U
+U by length.
+Length 0:
+
+{
+λ
+}
+{λ}
+Length 1:
+
+{
+p
+,
+q
+}
+{p,q}
+Length 2:
+
+{
+p
+p
+,
+p
+q
+,
+q
+p
+,
+q
+q
+}
+{pp,pq,qp,qq}
+Length 3:
+
+{
+p
+p
+p
+,
+p
+p
+q
+,
+p
+q
+p
+,
+p
+q
+q
+,
+q
+p
+p
+,
+q
+p
+q
+,
+q
+q
+p
+,
+q
+q
+q
+}
+{ppp,ppq,pqp,pqq,qpp,qpq,qqp,qqq}
+Thus,
+
+U
+=
+{
+λ
+,
+p
+,
+q
+,
+p
+p
+,
+p
+q
+,
+q
+p
+,
+q
+q
+,
+p
+p
+p
+,
+p
+p
+q
+,
+p
+q
+p
+,
+p
+q
+q
+,
+q
+p
+p
+,
+q
+p
+q
+,
+q
+q
+p
+,
+q
+q
+q
+}
+U={
+​
+  
+λ,p,q,pp,pq,qp,qq,
+ppp,ppq,pqp,pqq,qpp,qpq,qqp,qqq}
+​
+ 
+​
+ 
+The size is verified by the geometric sum:
+
+∣
+U
+∣
+=
+1
++
+2
++
+4
++
+8
+=
+15
+∣U∣=1+2+4+8= 
+15
+​
+ 
+(b) Compute 
+L
+1
+∪
+L
+2
+L 
+1
+​
+ ∪L 
+2
+​
+  and 
+L
+1
+∩
+L
+2
+L 
+1
+​
+ ∩L 
+2
+​
+ .
+The union contains every element appearing in either language:
+
+L
+1
+∪
+L
+2
+=
+{
+λ
+,
+p
+,
+q
+,
+p
+q
+,
+q
+q
+,
+p
+q
+p
+,
+q
+p
+,
+q
+q
+q
+}
+L 
+1
+​
+ ∪L 
+2
+​
+ ={λ,p,q,pq,qq,pqp,qp,qqq}
+​
+ 
+The intersection contains only elements shared by both languages. The only shared element is 
+p
+q
+pq.
+
+L
+1
+∩
+L
+2
+=
+{
+p
+q
+}
+L 
+1
+​
+ ∩L 
+2
+​
+ ={pq}
+​
+ 
+(c) Compute 
+L
+1
+−
+L
+2
+L 
+1
+​
+ −L 
+2
+​
+  and 
+L
+2
+−
+L
+1
+L 
+2
+​
+ −L 
+1
+​
+ .
+The difference 
+L
+1
+−
+L
+2
+L 
+1
+​
+ −L 
+2
+​
+  contains elements in 
+L
+1
+L 
+1
+​
+  but not in 
+L
+2
+L 
+2
+​
+ :
+
+L
+1
+−
+L
+2
+=
+{
+λ
+,
+p
+,
+q
+q
+,
+p
+q
+p
+}
+L 
+1
+​
+ −L 
+2
+​
+ ={λ,p,qq,pqp}
+​
+ 
+The difference 
+L
+2
+−
+L
+1
+L 
+2
+​
+ −L 
+1
+​
+  contains elements in 
+L
+2
+L 
+2
+​
+  but not in 
+L
+1
+L 
+1
+​
+ :
+
+L
+2
+−
+L
+1
+=
+{
+q
+,
+q
+p
+,
+q
+q
+q
+}
+L 
+2
+​
+ −L 
+1
+​
+ ={q,qp,qqq}
+​
+ 
+The answers differ because set difference is directional. The common element 
+p
+q
+pq is excluded from both differences, but the remaining members of each language are different.
+
+(d) Compute 
+U
+−
+L
+1
+U−L 
+1
+​
+ .
+Remove every element of 
+L
+1
+L 
+1
+​
+  from 
+U
+U.
+
+U
+−
+L
+1
+=
+{
+q
+,
+p
+p
+,
+q
+p
+,
+p
+p
+p
+,
+p
+p
+q
+,
+p
+q
+q
+,
+q
+p
+p
+,
+q
+p
+q
+,
+q
+q
+p
+,
+q
+q
+q
+}
+U−L 
+1
+​
+ ={
+​
+  
+q,pp,qp,ppp,ppq,
+pqq,qpp,qpq,qqp,qqq}
+​
+ 
+​
+ 
+There are 
+15
+−
+5
+=
+10
+15−5=10 elements, as expected.
+
+(e) Compute 
+U
+−
+(
+L
+1
+∪
+L
+2
+)
+U−(L 
+1
+​
+ ∪L 
+2
+​
+ ).
+First, the union is
+
+L
+1
+∪
+L
+2
+=
+{
+λ
+,
+p
+,
+q
+,
+p
+q
+,
+q
+q
+,
+p
+q
+p
+,
+q
+p
+,
+q
+q
+q
+}
+L 
+1
+​
+ ∪L 
+2
+​
+ ={λ,p,q,pq,qq,pqp,qp,qqq}
+Removing those eight elements from 
+U
+U gives
+
+U
+−
+(
+L
+1
+∪
+L
+2
+)
+=
+{
+p
+p
+,
+p
+p
+p
+,
+p
+p
+q
+,
+p
+q
+q
+,
+q
+p
+p
+,
+q
+p
+q
+,
+q
+q
+p
+}
+U−(L 
+1
+​
+ ∪L 
+2
+​
+ )={pp,ppp,ppq,pqq,qpp,qpq,qqp}
+​
+ 
+There are 
+15
+−
+8
+=
+7
+15−8=7 elements remaining.
+
+(f) Explain why the universe must be named when taking a complement.
+The complement of 
+L
+1
+L 
+1
+​
+  contains the elements that belong to the chosen universe but do not belong to 
+L
+1
+L 
+1
+​
+ .
+
+Without specifying a universe, the complement is ambiguous because different universes produce different results. For example, 
+U
+−
+L
+1
+U−L 
+1
+​
+  contains only strings of length at most 3 over 
+{
+p
+,
+q
+}
+{p,q}. If the universe were 
+Γ
+∗
+Γ 
+∗
+ , the complement would also include strings of length greater than 3.
+
+Therefore, a complement must be defined relative to a specified universe.
+
+Problem 8
+
+(a) Compute 
+P
+Q
+PQ using all six pairings.
+Since 
+P
+P has 3 members and 
+Q
+Q has 2 members, there are 
+3
+×
+2
+=
+6
+3×2=6 ordered pairings.
+
+First member from 
+P
+P
+
+Second member from 
+Q
+Q
+
+Concatenation
+
+λ
+λ
+
+b
+b
+
+b
+b
+
+λ
+λ
+
+a
+c
+ac
+
+a
+c
+ac
+
+a
+b
+ab
+
+b
+b
+
+a
+b
+b
+abb
+
+a
+b
+ab
+
+a
+c
+ac
+
+a
+b
+a
+c
+abac
+
+c
+c
+
+b
+b
+
+c
+b
+cb
+
+c
+c
+
+a
+c
+ac
+
+c
+a
+c
+cac
+
+All six results are distinct. Therefore,
+
+P
+Q
+=
+{
+b
+,
+a
+c
+,
+a
+b
+b
+,
+a
+b
+a
+c
+,
+c
+b
+,
+c
+a
+c
+}
+PQ={b,ac,abb,abac,cb,cac}
+​
+ 
+(b) Compute 
+Q
+P
+QP and compare it with 
+P
+Q
+PQ.
+List all six pairings, this time taking the first member from 
+Q
+Q.
+
+First member from 
+Q
+Q
+
+Second member from 
+P
+P
+
+Concatenation
+
+b
+b
+
+λ
+λ
+
+b
+b
+
+b
+b
+
+a
+b
+ab
+
+b
+a
+b
+bab
+
+b
+b
+
+c
+c
+
+b
+c
+bc
+
+a
+c
+ac
+
+λ
+λ
+
+a
+c
+ac
+
+a
+c
+ac
+
+a
+b
+ab
+
+a
+c
+a
+b
+acab
+
+a
+c
+ac
+
+c
+c
+
+a
+c
+c
+acc
+
+Thus,
+
+Q
+P
+=
+{
+b
+,
+b
+a
+b
+,
+b
+c
+,
+a
+c
+,
+a
+c
+a
+b
+,
+a
+c
+c
+}
+QP={b,bab,bc,ac,acab,acc}
+​
+ 
+Comparing the two languages,
+
+P
+Q
+≠
+Q
+P
+PQ
+
+=QP
+For example, 
+a
+b
+b
+∈
+P
+Q
+abb∈PQ but 
+a
+b
+b
+∉
+Q
+P
+abb∈
+/
+QP. Therefore, language concatenation is not commutative in general.
+
+(c) Compute 
+P
+2
+P 
+2
+  using all nine ordered pairings.
+By definition,
+
+P
+2
+=
+P
+P
+=
+{
+x
+y
+∣
+x
+∈
+P
+,
+ 
+y
+∈
+P
+}
+P 
+2
+ =PP={xy∣x∈P, y∈P}
+Show all nine pairings before removing duplicates:
+
+First member
+
+Second member
+
+Result
+
+λ
+λ
+
+λ
+λ
+
+λ
+λ
+
+λ
+λ
+
+a
+b
+ab
+
+a
+b
+ab
+
+λ
+λ
+
+c
+c
+
+c
+c
+
+a
+b
+ab
+
+λ
+λ
+
+a
+b
+ab
+
+a
+b
+ab
+
+a
+b
+ab
+
+a
+b
+a
+b
+abab
+
+a
+b
+ab
+
+c
+c
+
+a
+b
+c
+abc
+
+c
+c
+
+λ
+λ
+
+c
+c
+
+c
+c
+
+a
+b
+ab
+
+c
+a
+b
+cab
+
+c
+c
+
+c
+c
+
+c
+c
+cc
+
+Removing duplicates gives
+
+P
+2
+=
+{
+λ
+,
+a
+b
+,
+c
+,
+a
+b
+a
+b
+,
+a
+b
+c
+,
+c
+a
+b
+,
+c
+c
+}
+P 
+2
+ ={λ,ab,c,abab,abc,cab,cc}
+​
+ 
+(d) Identify every duplicate and explain the role of 
+λ
+λ.
+The nine ordered pairings produce only seven distinct strings.
+
+There are two duplicate results:
+
+a
+b
+ab occurs from 
+λ
+⋅
+a
+b
+λ⋅ab and 
+a
+b
+⋅
+λ
+ab⋅λ.
+
+c
+c occurs from 
+λ
+⋅
+c
+λ⋅c and 
+c
+⋅
+λ
+c⋅λ.
+
+The empty string is the identity element for concatenation:
+
+λ
+x
+=
+x
+λ
+=
+x
+λx=xλ=x
+Consequently, concatenating 
+λ
+λ with another member of 
+P
+P produces that same member, regardless of which side 
+λ
+λ occupies.
+
+The result 
+λ
+⋅
+λ
+=
+λ
+λ⋅λ=λ is not a duplicate of another distinct string; it is the single empty string result.
+
+(e) Find the minimum and maximum lengths of strings in 
+P
+Q
+PQ.
+The lengths of the members of 
+P
+P are
+
+∣
+ 
+λ
+ 
+∣
+=
+0
+,
+∣
+a
+b
+∣
+=
+2
+,
+∣
+c
+∣
+=
+1
+∣λ∣=0,∣ab∣=2,∣c∣=1
+The lengths of the members of 
+Q
+Q are
+
+∣
+b
+∣
+=
+1
+,
+∣
+a
+c
+∣
+=
+2
+∣b∣=1,∣ac∣=2
+For concatenation,
+
+∣
+x
+y
+∣
+=
+∣
+x
+∣
++
+∣
+y
+∣
+∣xy∣=∣x∣+∣y∣
+The minimum possible length is 
+0
++
+1
+=
+1
+0+1=1, and the maximum is 
+2
++
+2
+=
+4
+2+2=4.
+
+Minimum length
+=
+1
+,
+Maximum length
+=
+4
+Minimum length=1,Maximum length=4
+​
+
+Problem 9
+
+a) Does 
+λ
+λ belong to 
+R
+∗
+R 
+∗
+  and 
+R
++
+R 
++
+ ?
+λ
+∈
+R
+∗
+,
+λ
+∉
+R
++
+λ∈R 
+∗
+ ,λ∈
+/
+R 
++
+ 
+​
+ 
+For 
+R
+∗
+R 
+∗
+ , select zero members of 
+R
+R. For 
+R
++
+R 
++
+ , at least one nonempty member must be selected, so the result cannot be 
+λ
+λ.
+
+(b) Does 
+a
+b
+c
+abc belong to 
+R
+∗
+R 
+∗
+  and 
+R
++
+R 
++
+ ?
+Yes. Decompose the string as
+
+a
+b
+c
+=
+a
+b
+⋅
+c
+abc=ab⋅c
+Both factors, 
+a
+b
+ab and 
+c
+c, belong to 
+R
+R.
+
+Therefore,
+
+a
+b
+c
+∈
+R
+∗
+,
+a
+b
+c
+∈
+R
++
+abc∈R 
+∗
+ ,abc∈R 
++
+ 
+​
+ 
+(c) Does 
+c
+b
+a
+a
+b
+cbaab belong to 
+R
+∗
+R 
+∗
+  and 
+R
++
+R 
++
+ ?
+Yes. The decomposition is
+
+c
+b
+a
+a
+b
+=
+c
+⋅
+b
+a
+⋅
+a
+b
+cbaab=c⋅ba⋅ab
+All three factors belong to 
+R
+R.
+
+c
+b
+a
+a
+b
+∈
+R
+∗
+,
+c
+b
+a
+a
+b
+∈
+R
++
+cbaab∈R 
+∗
+ ,cbaab∈R 
++
+ 
+​
+ 
+(d) Does 
+a
+b
+b
+a
+abba belong to 
+R
+∗
+R 
+∗
+  and 
+R
++
+R 
++
+ ?
+Yes. The string can be decomposed as
+
+a
+b
+b
+a
+=
+a
+b
+⋅
+b
+a
+abba=ab⋅ba
+Both 
+a
+b
+ab and 
+b
+a
+ba are members of 
+R
+R.
+
+a
+b
+b
+a
+∈
+R
+∗
+,
+a
+b
+b
+a
+∈
+R
++
+abba∈R 
+∗
+ ,abba∈R 
++
+ 
+​
+ 
+(e) Does 
+b
+a
+c
+bac belong to 
+R
+∗
+R 
+∗
+  and 
+R
++
+R 
++
+ ?
+No. Every nonempty factor from 
+R
+R begins with either:
+
+a
+a, for the factor 
+a
+b
+ab;
+
+c
+c, for the factor 
+c
+c;
+
+b
+b, for the factor 
+b
+a
+ba, which must be followed by 
+a
+a.
+
+The string bac begins with b, so the only possible first factor is ba. That leaves c, which is valid, however:
+
+b
+a
+c
+=
+b
+a
+⋅
+c
+bac=ba⋅c
+Therefore, the correct answer is yes:
+
+b
+a
+c
+∈
+R
+∗
+,
+b
+a
+c
+∈
+R
++
+bac∈R 
+∗
+ ,bac∈R 
++
+ 
+​
+ 
+(f) Does 
+a
+c
+ac belong to 
+R
+∗
+R 
+∗
+  and 
+R
++
+R 
++
+ ?
+No.
+
+A valid first factor must be a member of 
+R
+R. None of the members 
+a
+b
+ab, 
+c
+c, or 
+b
+a
+ba matches the beginning of ac:
+
+a
+b
+ab does not match because the second symbol would be 
+b
+b, not 
+c
+c.
+
+c
+c does not match because the first symbol is 
+a
+a.
+
+b
+a
+ba does not match because the first symbol is 
+a
+a.
+
+Thus, no valid first factor can be selected.
+
+a
+c
+∉
+R
+∗
+,
+a
+c
+∉
+R
++
+ac∈
+/
+R 
+∗
+ ,ac∈
+/
+R 
++
+ 
+​
+ 
+(g) Does 
+c
+a
+b
+c
+b
+a
+cabcba belong to 
+R
+∗
+R 
+∗
+  and 
+R
++
+R 
++
+ ?
+Yes. One valid decomposition is
+
+c
+a
+b
+c
+b
+a
+=
+c
+⋅
+a
+b
+⋅
+c
+⋅
+b
+a
+cabcba=c⋅ab⋅c⋅ba
+Every factor belongs to 
+R
+R.
+
+c
+a
+b
+c
+b
+a
+∈
+R
+∗
+,
+c
+a
+b
+c
+b
+a
+∈
+R
++
+cabcba∈R 
+∗
+ ,cabcba∈R 
++
+ 
+​
+ 
+(h) Is 
+R
++
+=
+R
+∗
+−
+{
+λ
+}
+R 
++
+ =R 
+∗
+ −{λ}?
+Yes, for this 
+R
+R. In fact, this equality holds for every language 
+R
+R whose members are strings over an alphabet.
+
+By definition, 
+R
+∗
+R 
+∗
+  contains strings formed from zero or more factors, while 
+R
++
+R 
++
+  contains strings formed from one or more factors. The only string produced by choosing zero factors is 
+λ
+λ, so removing it from 
+R
+∗
+R 
+∗
+  gives 
+R
++
+R 
++
+ .
+
+R
++
+=
+R
+∗
+−
+{
+λ
+}
+R 
++
+ =R 
+∗
+ −{λ}
+​
+
+Problem 10  
+
+(a) List the distinct characters in the source statement.
+The distinct characters are:
+
+Σ
+c
+=
+{
+t
+,
+o
+,
+a
+,
+l
+,
+space
+,
+:
+,
+=
+,
+r
+,
+e
+,
+∗
+,
+h
+,
+u
+,
+s
+,
+;
+}
+Σ 
+c
+​
+ ={t,o,a,l,space,:,=,r,e,∗,h,u,s,;}
+​
+ 
+There are 14 distinct characters.
+
+The character-level alphabet contains the individual characters, including the space, colon, equals sign, asterisk, and semicolon.
+
+(b) Write the token-category string and give its length.
+The identifier total becomes ID, := becomes ASSIGN, rate becomes ID, * becomes MULT, hours becomes ID, and ; becomes SEMI.
+
+Thus, the token-category string is
+
+ID ASSIGN ID MULT ID SEMI
+ID ASSIGN ID MULT ID SEMI
+​
+ 
+It contains six tokens:
+
+∣
+ID ASSIGN ID MULT ID SEMI
+∣
+=
+6
+∣ID ASSIGN ID MULT ID SEMI∣=6
+​
+ 
+(c) Explain why pay := wage * time; has the same token-category string.
+The identifiers pay, wage, and time are different lexemes from total, rate, and hours. However, each identifier belongs to the same token category, ID.
+
+Consequently, both statements have the same token-category string:
+
+ID ASSIGN ID MULT ID SEMI
+ID ASSIGN ID MULT ID SEMI
+Tokenization preserves information such as token categories and the order of tokens. It abstracts away the exact spelling of identifiers when they are represented only by their category ID.
+
+(d) Determine membership in the singleton language 
+T
+T.
+The language is
+
+T
+=
+{
+ID ASSIGN ID MULT ID SEMI
+}
+T={ID ASSIGN ID MULT ID SEMI}
+Because 
+T
+T contains exactly one string, a candidate belongs to 
+T
+T if and only if it matches that exact token sequence.
+
+(i) ID ASSIGN ID MULT ID SEMI
+
+This matches the sole member of 
+T
+T.
+
+Yes
+Yes
+​
+ 
+(ii) ID ASSIGN MULT ID SEMI
+
+This is missing the ID that should appear between ASSIGN and MULT.
+
+No
+No
+​
+ 
+(iii) ID ASSIGN ID ID SEMI
+
+This has an extra ID and is missing MULT.
+
+No
+No
+​
+ 
+(e) Why can membership in 
+T
+T not determine whether missing has been declared?
+The statement
+
+total := missing * hours;
+
+has the same token-category pattern as the original statement:
+
+ID ASSIGN ID MULT ID SEMI
+ID ASSIGN ID MULT ID SEMI
+Therefore, it belongs to 
+T
+T.
+
+However, membership in 
+T
+T establishes only that the token sequence matches the specified structural pattern. It does not establish whether the identifier missing has been declared, whether its type is correct, or whether it is otherwise valid in the program.
+
+Declaration checking requires additional semantic analysis, such as looking up the identifier in a symbol table.
+
+(f) State the recognition problem formally.
+Formal definition: Given a string 
+w
+w and a language 
+L
+L, the recognition problem is to determine whether 
+w
+∈
+L
+w∈L.
+
+Applied to 
+T
+T: Given a token-category string 
+w
+w, determine whether 
+w
+w is exactly ID ASSIGN ID MULT ID SEMI, the sole member of 
+T
+T.
+
+Problem 11
+
+(a) For all strings 
+u
+u and 
+v
+v, 
+u
+v
+=
+v
+u
+uv=vu.
+Answer: FALSE.
+
+Counterexample: let 
+u
+=
+a
+b
+u=ab and 
+v
+=
+c
+v=c.
+
+Then
+
+u
+v
+=
+a
+b
+c
+,
+v
+u
+=
+c
+a
+b
+uv=abc,vu=cab
+Since 
+a
+b
+c
+≠
+c
+a
+b
+abc
+
+=cab, the universal claim is false.
+
+(b) For every language 
+L
+L, 
+L
++
+=
+L
+∗
+−
+{
+λ
+}
+L 
++
+ =L 
+∗
+ −{λ}.
+Answer: FALSE as stated for every language.
+
+Counterexample: let 
+L
+=
+∅
+L=∅.
+
+Since there are no members of 
+L
+L, no nonempty concatenation can be formed. Thus,
+
+L
++
+=
+∅
+L 
++
+ =∅
+However, 
+L
+∗
+=
+{
+λ
+}
+L 
+∗
+ ={λ}, because zero concatenated factors produce the empty string. Therefore,
+
+L
+∗
+−
+{
+λ
+}
+=
+∅
+L 
+∗
+ −{λ}=∅
+In this example the two sides are equal, so it does not disprove the claim. In fact, the claim is TRUE for every language 
+L
+L:
+
+L
++
+=
+L
+∗
+−
+{
+λ
+}
+L 
++
+ =L 
+∗
+ −{λ}
+​
+ 
+The reason is that 
+L
+∗
+L 
+∗
+  contains all strings formed from zero or more factors from 
+L
+L, while 
+L
++
+L 
++
+  contains all strings formed from one or more factors. The only additional string allowed by zero factors is 
+λ
+λ.
+
+(c) Whenever 
+x
+∈
+L
+1
+L
+2
+x∈L 
+1
+​
+ L 
+2
+​
+ , there is exactly one pair 
+(
+u
+,
+v
+)
+(u,v) with 
+u
+∈
+L
+1
+u∈L 
+1
+​
+ , 
+v
+∈
+L
+2
+v∈L 
+2
+​
+ , and 
+x
+=
+u
+v
+x=uv.
+Answer: FALSE.
+
+Counterexample: let
+
+L
+1
+=
+{
+λ
+,
+a
+}
+,
+L
+2
+=
+{
+a
+,
+λ
+}
+L 
+1
+​
+ ={λ,a},L 
+2
+​
+ ={a,λ}
+Consider 
+x
+=
+a
+x=a. There are two different valid decompositions:
+
+u
+=
+λ
+u=λ, 
+v
+=
+a
+v=a, so 
+u
+v
+=
+λ
+a
+=
+a
+uv=λa=a.
+
+u
+=
+a
+u=a, 
+v
+=
+λ
+v=λ, so 
+u
+v
+=
+a
+λ
+=
+a
+uv=aλ=a.
+
+Both pairs satisfy the required membership conditions, but they are different pairs.
+
+Therefore, a string in a language concatenation does not necessarily have a unique decomposition.
+
+The claim is FALSE.
+The claim is FALSE.
+​
